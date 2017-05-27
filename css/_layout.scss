@@ -1,0 +1,400 @@
+/* initial setup (common styles) */
+.heading, .epigraph, .undersign, .data_text, .footlink, .gallery_heading, .lifeline_heading, .data_heading, .button_more, .lifeline_data, .lifeline_definition, .caption_item, .fa, .footlink_link
+{font-size: $basic;}
+
+/* layout */
+html, body, .wrapper, .tarpas {
+  height: 100%;
+}
+.wrapper {
+  display: table;
+  width: 100%;
+  @media screen and (min-width: 1020px) {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: rgba(255,255,255,.2);
+  }
+}
+
+body {  
+  min-width: 300px;
+  @media screen and (max-width: 1019px) {
+    background: $color-bodybg;
+  }
+  @media screen and (min-width: 1020px) and (max-width: 1920px) {
+    background: fixed $color-bodybg $img-bg bottom center no-repeat;
+  }
+  @media screen and (min-width: 1981px) {
+    background: fixed $color-bodybg $img-bg bottom center no-repeat;
+    background-size: contain;
+  }  
+}
+
+/* header & content */
+.wrapcont {
+  display: block;
+  width: 100%;
+  background-color: $color-bg;
+  position: relative;
+  @media screen and (min-width: 1020px) {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .25);
+    overflow: hidden;
+    border-bottom-right-radius: $basic;
+    border-bottom-left-radius: $basic;
+  }  
+}
+.quote {
+  @media screen and (min-width: 720px) {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 274px);
+    background-color: $color-bg;
+  }
+}
+.heading {
+  text-align: center;
+  padding: $basic * 2;
+  font-size: $basic * 2.5;
+  font-family: 'Lobster';
+  color: $color-main;
+  @media screen and (max-width: 380px) {
+    font-size: $basic * 1.5;
+    padding: $basic;    
+  }
+  @media screen and (max-width: 479px) {
+    background-color: $color-bodybg;
+  }
+}
+
+.data_heading, .gallery_heading, .lifeline_heading {
+  font-size: $basic * 1.75;
+  padding-top: $basic * 2;
+  font-family: 'Lobster';
+  color: $color-main;
+  text-align: center;
+}
+.gallery_heading {
+  color: $color-bg;
+}
+.data_heading {
+  padding-top: 0;
+}
+blockquote::before, blockquote::after {
+  content: "\"";
+}
+blockquote, .undersign {
+  font-size: $basic * 1.25;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  color: $color-second;
+  padding: $basic / 2;  
+  @media screen and (max-width: 479px) {
+    font-size: $basic;
+    margin-left: 20%;
+  }
+  @media screen and (min-width: 480px) and (max-width: 719px) {
+    font-size: $basic * 1.25;
+    margin-left: 15%;
+  }
+}
+.epigraph {
+  text-align: left;
+  //outline: 1px solid red;
+}
+.undersign {
+  display: block;
+  text-align: right;
+  //outline: 1px solid red;
+}
+.photo {
+  display: inline-block;
+  vertical-align: top;
+  width: 274px;
+  height: 328px;
+  background: url(../img/aivaz.jpg) $color-bg center center no-repeat;
+  @media screen and (max-width: 479px) {
+    display: block;
+    width: 100%;
+    background-size: contain;
+  }
+  @media screen and (min-width: 480px) and (max-width: 719px) {
+    height: 400px;
+    display: block;
+    width: 100%;
+    background-size: contain;
+  } 
+}
+
+.data_text {
+  font-family: 'Open Sans', sans-serif;
+  margin: 20px;
+  text-indent: $basic * 3;
+  Line-height: $basic * 2;
+  color: $color-main;
+  text-align: justify;
+}
+
+.rope {
+  display: block;
+  margin: 0 auto;
+  width: 116px;
+  height: 42px;
+  background: url(../img/knot-colormain.png) center center no-repeat;
+  &::before, &::after {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    content: "";
+    height: 42px;
+    
+  }
+  &::before {
+    left: 40px;
+    width: calc(50% - 98px);
+    background: url(../img/rope-colormain.png) right center repeat-x;    
+  }
+  &::after {
+    right: 40px;
+    width: calc(50% - 98px);
+    background: url(../img/rope-colormain.png) left center repeat-x;
+  }
+}
+.wraplifeline {
+  //margin: $basic;
+  width: 100%;
+  margin: 0 auto;
+}
+.lifeline_data {
+  font-weight: bold;
+  display: inline;
+  line-height: 32px;
+  color: $color-main;
+  margin-left: $basic;
+  &::after {
+    content: ":";
+  }
+}
+.lifeline_definition {
+  display: inline-block;
+  vertical-align: top;
+  color: $color-main;
+  line-height: 32px;
+  width: calc(100% - 86px);
+  margin: 0;
+  margin-left: $basic;
+}
+
+.gallery {
+  display: block;
+  background-color: $color-main;  
+}
+
+.placeholder {
+  display: block;
+  background: $color-bg;
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+   @media screen and (max-width: 519px) {
+     display:inline-block;
+     vertical-align: top;
+     margin: 30px;
+     width: calc(100% - 60px);
+     height: 180px;
+     box-shadow: 0 10px 25px rgba(0,0,0,.7);
+     outline: 7px solid #2a2a2a;
+   }   
+  @media screen and (min-width: 520px) and (max-width: 779px) {
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px;
+    width: calc(50% - 60px);
+    height: 160px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.7);
+    outline: 7px solid #2a2a2a;
+  }
+  @media screen and (min-width: 780px) and (max-width: 1019px) {
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    width: calc(33% - 40px);
+    height: 160px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.7);
+    outline: 7px solid #2a2a2a;
+  }
+  
+  @media screen and (min-width: 1020px) {
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    height: 160px;
+    margin: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.7);
+    outline: 7px solid #2a2a2a;
+    &:hover {
+      box-shadow: 0 20px 20px rgba(0,0,0,.5);
+    }
+  }
+}
+.p1 {
+  background: url(../img/p1.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p2 {
+  background: url(../img/p2.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p3 {
+  background: url(../img/p3.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p4 {
+  background: url(../img/p4.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p5 {
+  background: url(../img/p5.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p6 {
+  background: url(../img/p6.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p7 {
+  background: url(../img/p7.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p8 {
+  background: url(../img/p8.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+.p9 {
+  background: url(../img/p9.jpg);
+  background-size: cover;
+  transition: background, .3s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform, .3s;
+  }
+}
+
+.caption_box {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,.4);
+}
+.caption_item {
+  display: inline-block;
+  color: $color-bg;
+  padding: $basic / 4;
+  font-size: $basic * .75;
+}
+
+.tarpas {
+  display: table-row;
+  text-align: center;
+  @media screen and (min-width: 300px) and (max-width: 1019px) {
+    background: $color-bg;
+  }
+}
+.button_more {
+  @media screen and (min-width: 300px) and (max-width:1019px) {
+    display: inline-block;
+    vertical-align: top;
+    margin: 40px 0;
+    background: $color-main;
+    padding: 0 $basic*2;
+    line-height: $basic * 3;
+    color: $color-bg;
+    border-radius: $basic / 2;
+    text-decoration: none;
+  }
+  @media screen and (min-width: 1020px) {
+    display: inline-block;
+    vertical-align: top;
+    margin: 40px 0;
+    background: $color-bg;
+    padding: 0 $basic * 2;
+    line-height: $basic * 3;
+    color: $color-main;
+    border-radius: $basic / 2;
+    border: 1px solid $color-main;
+    box-shadow: 0 10px 20px rgba(0,0,0,.3);
+    text-decoration: none;
+    &:hover {
+      background: $gradient-hover;
+    }
+    &:active {
+      background: $gradient-active;
+    }
+  }  
+}
+
+.footer {
+  display: block;
+  background-color: $color-main;
+  @media screen and (min-width: 1020px) {
+    border-top-right-radius: $basic;
+    border-top-left-radius: $basic;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .25);
+  }
+  text-align: center;
+}
+.footlink {
+  display: inline-block;
+  padding: $basic/2 $basic*2;
+  color: $color-second;
+  text-decoration: none;
+}
+.footlink_link {
+  color: $color-bg;
+  text-decoration: none;
+}
+.codebayowl {
+  display: inline-block;
+  vertical-align: top;
+  height: $basic * 1.5;
+}
